@@ -3,7 +3,7 @@ import infoStyle from "./InfoForm.module.css";
 export const InfoForm = () => {
   return (
     <form>
-      <div>
+      <div className={infoStyle.input}>
         <div>
           <label>Имя</label>
           <input type="text" />
