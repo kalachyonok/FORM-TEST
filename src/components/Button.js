@@ -1,9 +1,9 @@
 import styleButton from "./Button.module.css";
 
-export const Button = () => {
+export const Button = (props) => {
   return (
     <button type="submit" className={styleButton.button}>
-      Добавить пользователя
+      {props.label}
     </button>
   );
 };

@@ -1,3 +1,4 @@
+import { ErrorModal } from "./components/ErrorModal";
 import { InfoForm } from "./components/InfoForm";
 import { NameList } from "./components/NameList";
 import { useState } from "react";
@@ -15,6 +16,7 @@ function App() {
     <div>
       <InfoForm onAddNewUser={addNewUserHandler} />
       <NameList users={users} />
+      <ErrorModal />
     </div>
   );
 }

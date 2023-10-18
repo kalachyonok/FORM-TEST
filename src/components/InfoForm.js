@@ -48,7 +48,7 @@ export const InfoForm = (props) => {
           />
         </div>
 
-        <Button />
+        <Button label="Добавить пользователя" />
       </div>
     </form>
   );
