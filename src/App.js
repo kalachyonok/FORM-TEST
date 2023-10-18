@@ -5,6 +5,9 @@ import { useState } from "react";
 
 function App() {
   const [users, setNewUser] = useState([]);
+  const [isErrorModalVisible, setErrorModalVisible] = useState(false);
+  const [warning, setNewWorning] = useState("");
+  const [warningInfo, setNewWarningInfo] = useState("");
 
   const addNewUserHandler = (user) => {
     setNewUser((prevUsers) => {
@@ -12,11 +15,30 @@ function App() {
     });
   };
 
+  const changeWarningHandler = (text) => {
+    setNewWorning(text);
+  };
+
+  const addInfoWarningHandler = (info) => {
+    setNewWarningInfo(info);
+  };
+
+  const openModalErrorHandler = (state) => {
+    setErrorModalVisible(state);
+  };
+
   return (
     <div>
-      <InfoForm onAddNewUser={addNewUserHandler} />
+      <InfoForm
+        onAddNewUser={addNewUserHandler}
+        onOpenModalError={openModalErrorHandler}
+        onChangeWarning={changeWarningHandler}
+        onAddInfoWarning={addInfoWarningHandler}
+      />
       <NameList users={users} />
-      <ErrorModal />
+      {isErrorModalVisible && (
+        <ErrorModal warning={warning} warningInfo={warningInfo} />
+      )}
     </div>
   );
 }

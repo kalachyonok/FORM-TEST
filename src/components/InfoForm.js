@@ -17,6 +17,20 @@ export const InfoForm = (props) => {
     // console.log(111);
     event.preventDefault();
 
+    if (inputName.trim().length === 0 || inputAge.trim().length === 0) {
+      props.onChangeWarning("Некорректный ввод");
+      props.onAddInfoWarning("Эти поля не могут быть пустыми");
+      props.onOpenModalError(true);
+      return;
+    }
+
+    if (inputAge < 0) {
+      props.onChangeWarning("Некорректный возраст");
+      props.onAddInfoWarning("Возраст не может быть меньше 0");
+      props.onOpenModalError(true);
+      return;
+    }
+
     const newInfo = {
       userName: inputName,
       userAge: inputAge,
@@ -43,7 +57,6 @@ export const InfoForm = (props) => {
             type="number"
             value={inputAge}
             onChange={nameAgeHandler}
-            min="0"
             step="1"
           />
         </div>
