@@ -1,10 +1,19 @@
 import style from "./NameList.module.css";
 
-export function NameList() {
+export function NameList(props) {
+  console.log(props);
+
+  // if (props.users.length === 0) {
+  //   return;
+  // }
   return (
     <div className={style.users}>
       <ul>
-        <li>Здесь будет показана новая инфа пользователя: Ольга - 28 лет</li>
+        {props.users.map((user) => (
+          <li key={user.id}>
+            {user.userName} - {user.userAge}
+          </li>
+        ))}
       </ul>
     </div>
   );
