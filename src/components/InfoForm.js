@@ -1,3 +1,4 @@
+import { Button } from "./Button";
 import infoStyle from "./InfoForm.module.css";
 
 export const InfoForm = () => {
@@ -14,7 +15,7 @@ export const InfoForm = () => {
           <input type="number" min="0" step="1" />
         </div>
 
-        <button>Добавить пользователя</button>
+        <Button />
       </div>
     </form>
   );
