@@ -47,13 +47,19 @@ export const InfoForm = (props) => {
     <form onSubmit={submitHandler}>
       <div className={infoStyle.input}>
         <div>
-          <label>Имя</label>
-          <input type="text" value={inputName} onChange={nameChangeHandler} />
+          <label htmlFor="name">Имя</label>
+          <input
+            id="name"
+            type="text"
+            value={inputName}
+            onChange={nameChangeHandler}
+          />
         </div>
 
         <div>
-          <label>Возраст</label>
+          <label htmlFor="age">Возраст</label>
           <input
+            id="age"
             type="number"
             value={inputAge}
             onChange={nameAgeHandler}

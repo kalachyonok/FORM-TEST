@@ -37,7 +37,11 @@ function App() {
       />
       <NameList users={users} />
       {isErrorModalVisible && (
-        <ErrorModal warning={warning} warningInfo={warningInfo} />
+        <ErrorModal
+          warning={warning}
+          warningInfo={warningInfo}
+          onCloseModal={openModalErrorHandler}
+        />
       )}
     </div>
   );
